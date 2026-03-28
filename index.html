@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduPlanner EM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <div>
+          <p class="badge">Tela inicial</p>
+          <h1>EduPlanner EM</h1>
+          <p class="subtitle">Criação rápida de material escolar para o Ensino Médio.</p>
+        </div>
+        <div class="logo-box" aria-label="Logo da escola">Sua Escola</div>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <section class="panel form-panel">
+        <h2>Gerador de conteúdo</h2>
+
+        <label>
+          Disciplina
+          <select id="disciplina">
+            <option>Matemática</option>
+            <option>Português</option>
+            <option>Biologia</option>
+            <option>Química</option>
+            <option>Física</option>
+            <option>História</option>
+            <option>Geografia</option>
+            <option>Filosofia</option>
+            <option>Sociologia</option>
+            <option>Inglês</option>
+          </select>
+        </label>
+
+        <label>
+          Ano / Série
+          <select id="serie">
+            <option>1º ano</option>
+            <option>2º ano</option>
+            <option>3º ano</option>
+          </select>
+        </label>
+
+        <label>
+          Tema / Conteúdo
+          <input id="tema" type="text" placeholder="Ex.: Revolução Industrial" />
+        </label>
+
+        <label>
+          Objetivo da aula
+          <input id="objetivo" type="text" placeholder="Ex.: Revisar conceitos principais" />
+        </label>
+
+        <div class="actions">
+          <button id="btnAtividade" class="primary">Gerar atividade</button>
+          <button id="btnQuestoes" class="secondary">Gerar questões adaptadas</button>
+          <button id="btnTexto" class="secondary">Gerar texto simplificado</button>
+        </div>
+
+        <div class="row-actions">
+          <button id="btnSalvar" class="ghost">Salvar no histórico</button>
+          <button id="btnBaixar" class="ghost">Baixar conteúdo (.txt)</button>
+          <button id="btnLimpar" class="ghost">Limpar</button>
+        </div>
+      </section>
+
+      <section class="panel preview-panel">
+        <h2>Prévia na tela</h2>
+        <article id="preview" class="preview-card">
+          <p>Preencha os campos e clique em uma ação para gerar o material.</p>
+        </article>
+      </section>
+
+      <section class="panel personalize-panel">
+        <h2>Personalizar visual</h2>
+        <label>
+          Nome da escola
+          <input id="nomeEscola" type="text" placeholder="Ex.: Escola Estadual Modelo" />
+        </label>
+
+        <div class="color-picks">
+          <button id="temaAzul" class="chip">Tema Azul</button>
+          <button id="temaVerde" class="chip">Tema Verde</button>
+          <button id="temaRoxo" class="chip">Tema Roxo</button>
+        </div>
+
+        <button id="alternarContraste" class="ghost">Ativar alto contraste</button>
+      </section>
+
+      <section class="panel history-panel">
+        <h2>Histórico de materiais</h2>
+        <ul id="historico" class="history-list">
+          <li class="muted">Nenhum conteúdo salvo ainda.</li>
+        </ul>
+      </section>
+
+      <section class="panel books-panel">
+        <h2>Biblioteca gratuita</h2>
+        <p class="muted">Links para materiais abertos e gratuitos.</p>
+
+        <div class="book-filters">
+          <label>
+            Filtrar disciplina
+            <select id="filtroDisciplina">
+              <option value="todas">Todas</option>
+              <option>Matemática</option>
+              <option>Português</option>
+              <option>Biologia</option>
+              <option>Química</option>
+              <option>Física</option>
+              <option>História</option>
+              <option>Geografia</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="listaLivros" class="book-list"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Uso educacional. Verifique sempre a licença de cada material antes de redistribuir.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
