@@ -9,9 +9,12 @@
   <body>
     <header class="hero">
       <div class="hero-content">
-        <p class="badge">Tela inicial</p>
-        <h1>EduPlanner EM</h1>
-        <p class="subtitle">Criação rápida de material escolar para o Ensino Médio.</p>
+        <div>
+          <p class="badge">Tela inicial</p>
+          <h1>EduPlanner EM</h1>
+          <p class="subtitle">Criação rápida de material escolar para o Ensino Médio.</p>
+        </div>
+        <div class="logo-box" aria-label="Logo da escola">Sua Escola</div>
       </div>
     </header>
 
@@ -72,6 +75,22 @@
         <article id="preview" class="preview-card">
           <p>Preencha os campos e clique em uma ação para gerar o material.</p>
         </article>
+      </section>
+
+      <section class="panel personalize-panel">
+        <h2>Personalizar visual</h2>
+        <label>
+          Nome da escola
+          <input id="nomeEscola" type="text" placeholder="Ex.: Escola Estadual Modelo" />
+        </label>
+
+        <div class="color-picks">
+          <button id="temaAzul" class="chip">Tema Azul</button>
+          <button id="temaVerde" class="chip">Tema Verde</button>
+          <button id="temaRoxo" class="chip">Tema Roxo</button>
+        </div>
+
+        <button id="alternarContraste" class="ghost">Ativar alto contraste</button>
       </section>
 
       <section class="panel history-panel">

@@ -6,6 +6,8 @@ const previewEl = document.getElementById('preview');
 const historicoEl = document.getElementById('historico');
 const filtroDisciplinaEl = document.getElementById('filtroDisciplina');
 const listaLivrosEl = document.getElementById('listaLivros');
+const nomeEscolaEl = document.getElementById('nomeEscola');
+const logoBoxEl = document.querySelector('.logo-box');
 
 const btnAtividade = document.getElementById('btnAtividade');
 const btnQuestoes = document.getElementById('btnQuestoes');
@@ -13,6 +15,10 @@ const btnTexto = document.getElementById('btnTexto');
 const btnSalvar = document.getElementById('btnSalvar');
 const btnBaixar = document.getElementById('btnBaixar');
 const btnLimpar = document.getElementById('btnLimpar');
+const temaAzulEl = document.getElementById('temaAzul');
+const temaVerdeEl = document.getElementById('temaVerde');
+const temaRoxoEl = document.getElementById('temaRoxo');
+const alternarContrasteEl = document.getElementById('alternarContraste');
 
 const livros = [
   {
@@ -178,6 +184,25 @@ function renderLivros() {
     .join('');
 }
 
+function aplicarTema(nome) {
+  document.body.classList.remove('theme-green', 'theme-purple');
+  if (nome === 'verde') {
+    document.body.classList.add('theme-green');
+  }
+  if (nome === 'roxo') {
+    document.body.classList.add('theme-purple');
+  }
+}
+
+function alternarContraste() {
+  document.body.classList.toggle('high-contrast');
+}
+
+function atualizarNomeEscola() {
+  const nome = nomeEscolaEl.value.trim();
+  logoBoxEl.textContent = nome || 'Sua Escola';
+}
+
 btnAtividade.addEventListener('click', renderAtividade);
 btnQuestoes.addEventListener('click', renderQuestoesAdaptadas);
 btnTexto.addEventListener('click', renderTextoSimplificado);
@@ -185,5 +210,10 @@ btnSalvar.addEventListener('click', salvarNoHistorico);
 btnBaixar.addEventListener('click', baixarConteudo);
 btnLimpar.addEventListener('click', limparCampos);
 filtroDisciplinaEl.addEventListener('change', renderLivros);
+temaAzulEl.addEventListener('click', () => aplicarTema('azul'));
+temaVerdeEl.addEventListener('click', () => aplicarTema('verde'));
+temaRoxoEl.addEventListener('click', () => aplicarTema('roxo'));
+alternarContrasteEl.addEventListener('click', alternarContraste);
+nomeEscolaEl.addEventListener('input', atualizarNomeEscola);
 
 renderLivros();

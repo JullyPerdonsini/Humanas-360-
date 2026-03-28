@@ -10,6 +10,7 @@ Aplicativo web estático para apoiar professores do Ensino Médio na criação r
 - Histórico local de materiais gerados.
 - Download do conteúdo gerado em `.txt`.
 - Biblioteca de materiais gratuitos com filtro por disciplina.
+- Personalização rápida (nome da escola, temas de cor e alto contraste).
 
 ## Executar localmente
 
